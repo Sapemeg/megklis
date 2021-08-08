@@ -1,1 +1,157 @@
-HW
+<!DOCTYPE html>
+
+<script>
+        function sm_dsb(cityName, k) {
+                var i;
+                var j;
+                var x = document.getElementsByClassName("nav");
+                var y = document.getElementById("nvg");
+                y.style.display = "block";
+                var z = document.getElementsByClassName("bt");
+                for (j = 0; j < z.length; j++) {
+                        z[j].className = z[j].className.replace("w3-disabled", "");
+                        //z[j].className=z[j].className.replace("w3-white", "w3-blue");
+                }
+                k.className += "w3-disabled";
+                //k.className=k.className.replace(" w3-blue", "w3-white");
+                for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                }
+                document.getElementById(cityName).style.display = "block";
+        }
+
+        function auto_lang() {
+
+                if (navigator.appName == 'Netscape') {
+                        langType = navigator.language;
+                }
+                else {
+                        langType = navigator.browserLanguage;
+                }
+
+                var title = document.getElementsByTagName("title")
+
+                if (langType == 'el') {
+
+                        title[0].innerHTML = "Σαράντος Μεγκλής | ΣΑΡΑΝΤΟΣ ΜΕΓΚΛΗΣ"
+
+
+                        var x = document.getElementsByClassName("en");
+                        for (i = 0; i < x.length; i++) {
+                                console.log(x[i]);
+                                x[i].style.display = "none";
+                        }
+
+                } else {
+
+                        title[0].innerHTML = "Sarantos Meglis | Sarantos Megklis"
+                        var x = document.getElementsByClassName("el");
+                        for (i = 0; i < x.length; i++) {
+                                console.log(x[i]);
+                                x[i].style.display = "none";
+                        }
+
+                }
+
+                console.log(langType);
+
+        }
+
+</script>
+
+<html>
+<title> Sarantos Meglis | Sarantos Megklis </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<meta name="google-site-verification" content="PSq_vEftqJDW-kFszP-icXw1vsNuNPuZJq4TP3asDRg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+
+
+
+
+
+
+
+
+
+<body onload="auto_lang()">
+        <div class="w3-display-container">
+                <div class="w3-container w3-content w3-padding-16">
+
+
+
+                        <div class="w3-card-4  w3-center w3-blue  ">
+                                <header class="w3-container w3-blue w3-padding-16  ">
+                                        <div class="w3-container  ">
+                                                <img src="img.gif" style="width:30%;">
+                                        </div>
+                                        <h1 class="el"> Σαράντος Π. Μεγκλής</h1>
+                                        <h1 class="en"> Sarantos P. Megklis</h1>
+                                        <p> DEV/OPS @ Avaca Technologies </p>
+
+                                </header>
+                                <div class="w3-bar ">
+
+                                        <button class="w3-button w3-indigo w3-padding-large  bt  "
+                                                onclick="sm_dsb('CV', this)" style="display:none"><b>CV</b></button>
+                                        <button class="w3-button w3-indigo w3-padding-large  bt "
+                                                onclick="sm_dsb('Contact', this)">
+                                                <b class="el">επικοινωνία</b>
+                                                <b class="en">contact</b>
+                                        </button>
+                                        <button class="w3-button w3-indigo w3-padding-large  bt "
+                                                onclick="sm_dsb('About', this)">
+                                                <b class='el'>σχετικά</b>
+                                                <b class='en'>about</b>
+                                        </button>
+
+                                </div>
+
+                                <div id="nvg" class="w3-container  w3-center w3-green " style="display:none">
+
+                                        <div id="CV" class="w3-container nav" style="display:none">
+                                                <p>text CV </p>
+                                        </div>
+
+                                        <div id="Contact" class="w3-container  nav" style="display:none">
+                                                <div class="w3-content w3-center w3-padding">
+                                                        <a href="https://twitter.com/sapemeg" target="_blank"
+                                                                class=" w3-padding ">Twitter</a>
+                                                        <a href="https://facebook.com/sarantos.meglis" target="_blank"
+                                                                class="w3-padding ">Facebook</a>
+                                                        <a href="mailto:sarantos@meglis.com">sarantos@meglis.com</a>
+                                                        <a href="SarantosPMegklis.txt" target="_blank"
+                                                                class="w3-padding  ">PGP key</a>
+                                                </div>
+                                        </div>
+
+                                        <div id="About" class="w3-container   nav" style="display:none">
+                                                <div class="w3-content w3-center w3-padding">
+                                                        <a href="https://blog.meglis.com" target="_blank"
+                                                                class=" w3-padding ">blog.meglis.com</a>
+                                                        <a href="http://www.w3schools.com/w3css/" target="_blank"
+                                                                class=" w3-padding ">made with w3.css</a>
+                                                        <a href="https://docs.github.com/en/pages" target="_blank"
+                                                                class=" w3-padding ">hosted at GitHub Pages</a>
+
+                                                </div>
+                                        </div>
+                                </div>
+                                <footer class="w3-container w3-grey w3-tiny  w3-padding  ">
+
+                                        copyright 2021 Sarantos Meglis
+                                </footer>
+                        </div>
+                </div>
+        </div>
+</body>
+
+</html>
